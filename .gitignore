@@ -1,3 +1,7 @@
 node_modules
+<<<<<<< HEAD
 /test/mongo
 /test/npm-debug.log
+=======
+test/mongo
+>>>>>>> 4b91ac6c094d900b3d3c05d3e96721e7cb9f7a03

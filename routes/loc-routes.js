@@ -11,10 +11,9 @@ module.exports = function(router) {
 
 //GET all locations
   router.get('/locs', function(req, res) {
-    Loc.find(function(err, data) {
+    Loc.find({}, function(err, data) {
       if (err) {
-        console.log(err);
-        res.json(data);
+        res.json({'error:': err});
       } else {
         res.json(data);
       }
@@ -26,8 +25,7 @@ module.exports = function(router) {
     var name = req.body.name;
     Loc.findOne({name:name}, function(err, data) {
       if (err) {
-        console.log(err);
-        res.json(data);
+        res.json({'error:': err});
       } else {
         res.json(data);
       }
@@ -45,8 +43,7 @@ module.exports = function(router) {
       lockingDoors: req.body.lockingDoors,
       fullDoors: req.body.fullDoors,
       wheelchairStall: req.body.wheelchairStall,
-      changingTables: req.body.changingTables,
-
+      changingTables: req.body.changingTables
     }).save(function(err, data) {
       if (err) {
         console.log(err);

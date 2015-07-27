@@ -12,7 +12,7 @@ var mongoURI = process.env.MONGO_SAFETYAPP_URI || 'mongodb://localhost/safetydan
 var userRoutes = express.Router();
 var locRoutes = express.Router();
 require('./routes/loc-routes')(locRoutes);
-app.use('/', locRoutes);
+app.use('/api', locRoutes);
 
 mongoose.connect(mongoURI, function(err) {
   if (err) console.log('error: ' + err);

@@ -45,8 +45,7 @@ module.exports = function(router) {
       lockingDoors: req.body.lockingDoors,
       fullDoors: req.body.fullDoors,
       wheelchairStall: req.body.wheelchairStall,
-      changingTables: req.body.changingTables,
-
+      changingTables: req.body.changingTables
     }).save(function(err, data) {
       if (err) {
         console.log(err);

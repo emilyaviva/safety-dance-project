@@ -23,7 +23,7 @@ module.exports = function(router) {
 
 //GET one location by name
   router.get('/loc/:name', function(req, res) {
-    var name = req.params.name;
+    var name = req.body.name;
     Loc.findOne({name:name}, function(err, data) {
       if (err) {
         console.log(err);

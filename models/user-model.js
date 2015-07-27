@@ -5,7 +5,8 @@ var Schema = mongoose.Schema;
 
 var userSchema = new Schema({
   name: {type: String, unique: true},
-  comment: {type: String}
+  password: {type: String},
+  cards: {type: Array}
 });
 
 module.exports = mongoose.model('User', userSchema);

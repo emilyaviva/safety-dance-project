@@ -6,8 +6,8 @@ var chai = require('chai');
 var chaiHttp = require('chai-http');
 var expect = chai.expect;
 
-// process.env.MONGO_FILESAPP_URI = 'mongodb://localhost/mongo_filesapp_test';
-// process.env.PORT = 3003;
+process.env.MONGO_SAFETYAPP_URI = 'mongodb://localhost/mongo_safetyapp_test';
+process.env.PORT = 3003;
 
 chai.use(chaiHttp);
 

@@ -1,7 +1,8 @@
 {
   "name": "safety-dance-project",
-  "version": "1.0.0",
-  "description": "This is a tool to help transgender folks find a safe place to use the restroom.  It will include user ratings and locations.",
+  "version": "0.0.1",
+  "description": "This is a tool to help transgender folks find a safe place to use the restroom. It will include user ratings and locations.",
+  "license": "MIT",
   "main": "server.js",
   "directories": {
     "test": "test"
@@ -14,8 +15,30 @@
     "type": "git",
     "url": "git+https://github.com/emilyaviva/safety-dance-project.git"
   },
-  "author": "",
-  "license": "MIT",
+  "author": "Safety Dance Team",
+  "contributors": [
+    {
+      "name": "Emily Aviva Kapor-Mater",
+      "email": "emily@emilyaviva.com"
+    },
+    {
+      "name": "Lauren McNerney",
+      "email": "lcmnern@outlook.com"
+    },
+    {
+      "name": "Peggy Wirtz",
+      "email": "hengist2001@hotmail.com"
+    }
+  ],
+  "keywords": [
+    "bathroom",
+    "washroom",
+    "restroom",
+    "toilet",
+    "transgender",
+    "safety",
+    "safe"
+  ],
   "bugs": {
     "url": "https://github.com/emilyaviva/safety-dance-project/issues"
   },

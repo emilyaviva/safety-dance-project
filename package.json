@@ -1,0 +1,47 @@
+{
+  "name": "safety-dance-project",
+  "version": "1.0.0",
+  "description": "This is a tool to help transgender folks find a safe place to use the restroom.  It will include user ratings and locations.",
+  "main": "server.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "gulp test",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emilyaviva/safety-dance-project.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/emilyaviva/safety-dance-project/issues"
+  },
+  "homepage": "https://github.com/emilyaviva/safety-dance-project#readme",
+  "dependencies": {
+    "body-parser": "^1.13.2",
+    "express": "^4.13.1",
+    "mongoose": "^4.1.0",
+    "node-sass": "^3.2.0",
+    "sass": "^0.5.0"
+  },
+  "devDependencies": {
+    "chai": "^3.2.0",
+    "chai-http": "^1.0.0",
+    "gulp": "^3.9.0",
+    "gulp-exit": "0.0.2",
+    "gulp-minify-css": "^1.2.0",
+    "gulp-minify-html": "^1.0.4",
+    "gulp-sass": "^2.0.4",
+    "gulp-uglify": "^1.2.0",
+    "gulp-webpack": "^1.5.0",
+    "jshint": "^2.8.0",
+    "jshint-stylish": "^2.0.1",
+    "mocha": "^2.2.5",
+    "mocha-jshint": "^2.2.3",
+    "node-libs-browser": "^0.5.2",
+    "webpack": "^1.10.5"
+  }
+}

@@ -19,18 +19,18 @@ module.exports = function(router) {
       }
     });
   });
-
-//GET one location by name
-  // router.get('/api/loc/:id', function(req, res) {
-  //   var id = req.body.id;
-  //   Loc.findOne({id:id}, function(err, data) {
-  //     if (err || !data) {
-  //       res.json({'error ': err});
-  //     } else {
-  //       res.json(data);
-  //     }
-  //   });
-  // });
+  
+// GET one location by name
+    router.get('/api/loc/:id', function(req, res) {
+      var id = req.body._id;
+      Loc.findOne({_id:id}, function(err, data) {
+        if (err || !data) {
+           res.json({'error ': err});
+        } else {
+           res.json(data);
+        }
+      });
+    });
 
 //POST new location
 router.post('/api/loc', function(req, res) {

@@ -5,7 +5,7 @@ var Schema = mongoose.Schema;
 
 var locSchema = new Schema({
   name: {type: String},
-  locationName: {type: String, unique: true},
+  locationName: {type: String},
   genderNeutral: {type: Boolean},
   openToPublic: {type: Boolean},
   singleStall: {type: Boolean},

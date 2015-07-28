@@ -21,7 +21,7 @@ describe('app', function() {
 
   it('should create and POST a new location', function(done) {
     chai.request('localhost:3003')
-        .post('/loc')
+        .post('/api/loc')
         .send({"name": "testName", "locationName": "testLocationName"})
         .end(function(err, res) {
           expect(err).to.eql(null);
@@ -32,7 +32,7 @@ describe('app', function() {
 
   it('respond to a GET requests', function (done) {
     chai.request('localhost:3003')
-        .get('/locs')
+        .get('/api/locs')
         .end(function(err, res) {
           expect(err).to.eql(null);
           expect(typeof res.body).to.eql('object');

@@ -10,7 +10,7 @@ module.exports = function(router) {
   router.use(bodyParser.json());
 
 //GET all locations
-  router.get('/api/locs', function(req, res) {
+  router.get('/locs', function(req, res) {
     Loc.find({}, function(err, data) {
       if (err || !data) {
         res.json({'error:': err});
@@ -19,9 +19,9 @@ module.exports = function(router) {
       }
     });
   });
-  
+
 // GET one location by name
-    router.get('/api/loc/:id', function(req, res) {
+    router.get('/loc/:id', function(req, res) {
       var id = req.body._id;
       Loc.findOne({_id:id}, function(err, data) {
         if (err || !data) {
@@ -33,7 +33,7 @@ module.exports = function(router) {
     });
 
 //POST new location
-router.post('/api/loc', function(req, res) {
+router.post('/loc', function(req, res) {
     var newLoc = new Loc({
       name: req.body.name,
       locationName: req.body.locationName,

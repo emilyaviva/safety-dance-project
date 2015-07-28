@@ -20,10 +20,10 @@ module.exports = function(router) {
     });
   });
 
-// GET one location by name
+//GET one location by id
     router.get('/loc/:id', function(req, res) {
-      var id = req.body._id;
-      Loc.findOne({_id:id}, function(err, data) {
+      var id = req.params.id;
+      Loc.findById(id, function(err, data) {
         if (err || !data) {
            res.json({'error ': err});
         } else {

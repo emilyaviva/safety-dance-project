@@ -19,10 +19,10 @@ module.exports = function(router) {
       }
     });
   });
-  
-// GET one location by name
+
+// GET one location by ID
     router.get('/api/loc/:id', function(req, res) {
-      var id = req.body._id;
+      var id = req.params.id;
       Loc.findOne({_id:id}, function(err, data) {
         if (err || !data) {
            res.json({'error ': err});
@@ -32,10 +32,10 @@ module.exports = function(router) {
       });
     });
 
-//POST new location
+//POST new comment card
 router.post('/api/loc', function(req, res) {
     var newLoc = new Loc({
-      name: req.body.name,
+      approved: false,
       locationName: req.body.locationName,
       genderNeutral: req.body.genderNeutral,
       openToPublic: req.body.openToPublic,
@@ -50,12 +50,10 @@ router.post('/api/loc', function(req, res) {
         console.log('POST error ' + err + '.');
         return res.status(500).json({'msg': 'error!'});
       } else {
-        res.send({"msg": "added new location", success: true});
+        res.json({'msg': 'added new location', success: true});
       }
     });
   });
-
-
 
 
 };

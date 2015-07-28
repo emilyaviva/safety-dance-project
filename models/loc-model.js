@@ -4,6 +4,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var locSchema = new Schema({
+  approved: {type: Boolean},
   name: {type: String},
   locationName: {type: String},
   genderNeutral: {type: Boolean},

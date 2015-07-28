@@ -12,7 +12,7 @@ module.exports = function(router) {
 //GET all locations
   router.get('/locs', function(req, res) {
     Loc.find({}, function(err, data) {
-      if (err) {
+      if (err || !data) {
         res.json({'error:': err});
       } else {
         res.json(data);
@@ -24,7 +24,7 @@ module.exports = function(router) {
   router.get('/loc/:name', function(req, res) {
     var name = req.body.name;
     Loc.findOne({name:name}, function(err, data) {
-      if (err) {
+      if (err || !data) {
         res.json({'error:': err});
       } else {
         res.json(data);
@@ -33,8 +33,8 @@ module.exports = function(router) {
   });
 
 //POST new location
-  router.post('/loc', function(req, res) {
-    new Loc({
+router.post('/loc', function(req, res) {
+    var newLoc = new Loc({
       name: req.body.name,
       locationName: req.body.locationName,
       genderNeutral: req.body.genderNeutral,
@@ -44,14 +44,17 @@ module.exports = function(router) {
       fullDoors: req.body.fullDoors,
       wheelchairStall: req.body.wheelchairStall,
       changingTables: req.body.changingTables
-    }).save(function(err, data) {
-      if (err) {
-        console.log(err);
+    });
+    newLoc.save(function (err, data) {
+      if (err || !data) {
+        console.log('POST error ' + err + '.');
+        return res.status(500).json({'msg': 'error!'});
       } else {
-        res.json({"msg": "added new location"});
+        res.send({"msg": "added new location", success: true});
       }
     });
   });
+
 
 
 

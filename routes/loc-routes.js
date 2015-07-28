@@ -32,6 +32,18 @@ module.exports = function(router) {
     });
   });
 
+//GET one location by name
+  router.get('/loc/:name', function (req, res) {
+    var name = req.params.name;
+    Loc.finebyOne(name, function (err, data) {
+      if (err || !data) {
+        res.json({'error ': err});
+      } else {
+        res.json(data);
+      }
+    });
+  });
+
 //POST new location
 router.post('/loc', function (req, res) {
   var newLoc = new Loc({
@@ -78,7 +90,4 @@ router.delete('/loc/:id', function(req, res) {
       }
       });
     });
-
-
-
 };

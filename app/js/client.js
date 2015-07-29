@@ -15,6 +15,7 @@ require('./directives/locations-list-directive.js')(safetyApp);
 //for testing - remove when routes are ready
 require('./directives/location-card-directive.js')(safetyApp);
 require('./directives/contact-directive.js')(safetyApp);
+require('./directives/comment-card-directive.js')(safetyApp);
 
 //routes
 // safetyApp.config(['$routeProvider', function($routeProvider) {

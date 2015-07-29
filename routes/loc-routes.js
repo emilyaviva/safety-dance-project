@@ -10,14 +10,12 @@ var router = express.Router;
 module.exports = function(router) {
   router.use(bodyParser.json());
 
-  // GET all locations
+  // GET all locations (without nested cards!)
   router.get('/locs', function(req, res) {
-    Loc.find({})
-       .populate('cards')
-       .exec(function(err, found) {
-          if (err || !found) res.status(500).json({error: err});
-          else res.json(found);
-        });
+    Loc.find({}, function(err, found) {
+      if (err || !found) res.status(500).json({error: err});
+      else res.json(found);
+    });
   });
 
   // GET one location by ID
@@ -30,12 +28,14 @@ module.exports = function(router) {
 
   // GET location's populated cards
   router.get('/locs/:id/cards', function(req, res) {
-    Loc.findById(req.params.id)
-       .populate('cards')
-       .exec(function(err, loc) {
-         if (err || !loc) res.status(500).json({error: err});
-         else res.send(loc.cards);
-       });
+    Loc.findById(req.params.id, function(err, loc) {
+       if (err || !loc) res.status(500).json({error: err});
+       else {
+         Card.find({loc: loc._id}, function(err, cards) {
+           res.json(cards);
+         });
+       }
+     });
   });
 
   // POST new blank location

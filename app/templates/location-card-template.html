@@ -1,0 +1,65 @@
+<section class="location-card form__base" >
+<!-- data-ng-controller="locationCardController" -->
+  <section class="clearfix location-card__details">
+    <p>Searching for location: <span id="geostatus">checking...</span></p>
+    <article class="location-card__map">      
+    </article>
+    <section class="clearfix form__base location-card__stats">
+      <section>
+        <h3>Location</h3>
+        <ul>
+          <li>Location 1</li>
+          <li>123 bathroom way</li>
+        </ul>
+      </section>
+      <section>
+        <h3>Bathroom Type</h3>
+        <ul>
+          <li data-ng-if="true">Shared Public</li>
+          <li data-ng-if="true">Separate M/W</li>
+          <li data-ng-if="true">Non-Full Doors</li>
+          <li data-ng-if="true">Separate ADA Bathroom</li>
+          <li data-ng-if="true">Stall or Bathroom Marked gender-neutral</li>
+        </ul>
+      </section>
+    </section>
+    <section class="clearfix form__base location-card__more-info">
+      <p>Information last updated: 02/15/2015</p>
+      <button>View User Notes</button>
+      <p>Has this information changed? Was your experience different?</p>
+      <button>Submit New Comment Card</button>
+    </section>
+  </section>
+</section>
+
+<!-- <section class="location-card form__base" > -->
+  <!-- data-ng-controller="locationCardController" -->
+  <!-- <figure class="location-card__map">
+    <p>Searching the Internet to find you: <span id="geostatus">checking...</span></p>
+  </figure>
+  <section class="location-card__details">
+    <section class="form__base location-card__stats">
+      <section>
+        <h3>Location</h3>
+        <p>{{location.name}}</p>
+        <p>{{location.location}}</p>
+      </section>
+      <section>
+        Bathroom Type
+        <ul>
+          <li data-ng-if="location.sharedPublic">Shared Public</li>
+          <li data-ng-if="location.separateMW">Separate M/W</li>
+          <li data-ng-if="location.nonFullDoors">Non-Full Doors</li>
+          <li data-ng-if="location.adaBathroom">Separate ADA Bathroom</li>
+          <li data-ng-if="location.markedNeutral">Stall or Bathroom Marked gender-neutral</li>
+        </ul>
+      </section>
+    </section>
+      <section>
+        <p>Information last updated: {{location.lastUpdatedDate | date:'shortDate'}}</p>
+        <button>View User Notes</button>
+        <p>Has this information changed? Was your experience different?</p>
+        <button>Submit New Comment Card</button>
+      </section>
+    </section>
+  </section>  -->

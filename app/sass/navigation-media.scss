@@ -1,16 +1,6 @@
-$primary-color: #fff;
-$secondary-color: #8800E3;
-$tertiary-color: #6200A3;
-
 $contrast-color-dark: #3B0063;
-$contrast-color-light: lighten($contrast-color-dark, 25%);
 $contrast-color-highlight: lighten($contrast-color-dark, 60%);
-$contrast-color-darker: darken($contrast-color-dark, 25%);
-
-$font-color-main: black;
 $font-color-on-element: white;
-$font-color-highlight: $contrast-color-light;
-$font-color-visited: darken($font-color-highlight, 50%);
 
 /* smaller (mobile)*/
 @media (max-width: 54em) {
@@ -25,9 +15,6 @@ $font-color-visited: darken($font-color-highlight, 50%);
     left: 0;
     z-index: 1;
     opacity: 0.85;
-  }
-
-  .navigation {
     transition: top 0.2s;
   }
 
@@ -39,7 +26,7 @@ $font-color-visited: darken($font-color-highlight, 50%);
 /* medium (tablet)*/
 @media (min-width: 55em) {
   .nav-item {
-    width: 18%;    
+    width: 18%;
   }
 
   .nav-trigger + label, .site-wrap {
@@ -73,12 +60,15 @@ $font-color-visited: darken($font-color-highlight, 50%);
     margin: 0px;
     .nav-item {
       display: inline;
-      padding: 20px;
+      padding: 2em;
+      height: auto;
+      margin: 0px;
     }
     a {
       text-decoration: none;
       color: $font-color-on-element;
-      padding: 8px;
+      display: inline;
+      padding: 1em;
     }
     :hover {
       color: $font-color-on-element;
@@ -90,15 +80,6 @@ $font-color-visited: darken($font-color-highlight, 50%);
     }
   }
 
-  .nav-item {
-    height: auto;
-    padding: 1em;
-    margin: 0px;
-    a {
-      display: inline;
-      padding: 1em;
-    }
-  }
 
   .nav-trigger + label {
     display: none;

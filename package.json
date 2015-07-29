@@ -45,6 +45,7 @@
   "homepage": "https://github.com/emilyaviva/safety-dance-project#readme",
   "dependencies": {
     "angular": "^1.4.3",
+    "angular-route": "^1.4.3",
     "body-parser": "^1.13.2",
     "express": "^4.13.1",
     "mongoose": "^4.1.0",

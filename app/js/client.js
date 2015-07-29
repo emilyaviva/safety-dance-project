@@ -16,12 +16,12 @@ require('./directives/locations-list-directive.js')(safetyApp);
 require('./directives/location-card-directive.js')(safetyApp);
 require('./directives/contact-directive.js')(safetyApp);
 require('./directives/comment-card-directive.js')(safetyApp);
+require('./directives/comments-for-location-directive.js')(safetyApp);
 
-//routes
 // safetyApp.config(['$routeProvider', function($routeProvider) {
 // 	$routeProvider
 // 	.when('/about', {
-// 		templateUrl: '/templates/about-template.html'
+// 		templateUrl: './templates/about-template.html'
 // 	})
   // .when('/locationCard', {
 	// 	templateUrl: '/templates/location-card-template.html',

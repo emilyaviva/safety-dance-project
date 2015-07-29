@@ -1,0 +1,60 @@
+body
+  background-color: #fff
+
+/* Site Wrapper - Everything that isn't navigation */
+.site-wrap
+  min-height: 100%
+  min-width: 100%
+  background-color: white
+  position: relative
+  top: 0
+  bottom: 100%
+  left: 2em
+  z-index: 1
+  background-size: 200%
+
+header
+  margin: 0 2em 0 2em
+  color: $font-color-main
+
+
+/*----- LINKS -----*/
+a
+  text-decoration: none
+  color: $font-color-link
+  &:visited
+    color: $font-color-visited-link
+  &:hover
+    color:$font-color-highlight
+
+/*----- ARTICLES -----*/
+// article
+//   margin-left: 5em
+//   header
+//     border-bottom: 0
+//     margin-left: -30px
+
+/*----- SPECIAL ELEMENTS -----*/
+
+video
+  float: left
+  margin-right : 1em
+
+aside
+  width: 300px
+  margin: 0.5em
+  padding: 0.5em
+  background-color: $contrast-color-dark
+  color: $contrast-color-darker
+  display: inline
+  font-size: larger
+  float: right
+
+/*----- HELPERS ----- */
+.clearfix
+  *zoom: 1
+  &:after
+    clear: both
+  &:before, :after
+    content: ""
+    display: table

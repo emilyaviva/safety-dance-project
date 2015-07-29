@@ -1,0 +1,113 @@
+$primary-color: #fff;
+$secondary-color: #8800E3;
+$tertiary-color: #6200A3;
+
+$contrast-color-dark: #3B0063;
+$contrast-color-light: lighten($contrast-color-dark, 25%);
+$contrast-color-highlight: lighten($contrast-color-dark, 60%);
+$contrast-color-darker: darken($contrast-color-dark, 25%);
+
+$font-color-main: black;
+$font-color-on-element: white;
+$font-color-highlight: $contrast-color-light;
+$font-color-visited: darken($font-color-highlight, 50%);
+
+/* smaller (mobile)*/
+@media (max-width: 54em) {
+  .site-wrap {
+    z-index: 0;
+  }
+
+  .navigation {
+    top: 100%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    opacity: 0.85;
+  }
+
+  .navigation {
+    transition: top 0.2s;
+  }
+
+  .nav-trigger:checked ~ .navigation {
+    top: calc(100% - 22.0521em);
+  }
+}
+
+/* medium (tablet)*/
+@media (min-width: 55em) {
+  .nav-item {
+    width: 18%;    
+  }
+
+  .nav-trigger + label, .site-wrap {
+    transition: left 0.2;
+  }
+
+  .nav-trigger:checked + label {
+    left: calc(100% - 7.25em - 18%);
+  }
+
+  .nav-trigger:checked ~ .site-wrap {
+    left: -18%;
+    box-shadow: 0 0 5px 5px rgba(0,0,0,0.5);
+  }
+}
+
+/* large (desktop)*/
+@media (min-width: 80em) {
+  .site-wrap {
+    z-index: 0;
+  }
+
+  .navigation {
+    width: 100%;
+    position: relative;
+    text-align: center;
+    z-index: 2;
+    height: auto;
+    padding: 8px 0px;
+    left: 0px;
+    margin: 0px;
+    .nav-item {
+      display: inline;
+      padding: 20px;
+    }
+    a {
+      text-decoration: none;
+      color: $font-color-on-element;
+      padding: 8px;
+    }
+    :hover {
+      color: $font-color-on-element;
+      background-color: $contrast-color-highlight;
+    }
+    :visited {
+      text-decoration: none;
+      color: $font-color-on-element;
+    }
+  }
+
+  .nav-item {
+    height: auto;
+    padding: 1em;
+    margin: 0px;
+    a {
+      display: inline;
+      padding: 1em;
+    }
+  }
+
+  .nav-trigger + label {
+    display: none;
+  }
+  .align-center {
+    margin: 0 auto;
+  }
+
+  .center-text {
+    text-align: center;
+  }
+}

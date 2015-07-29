@@ -1,3 +1,6 @@
 node_modules
+.sass-cache
+public
+public.css
 test/mongo
 test/npm-debug.log

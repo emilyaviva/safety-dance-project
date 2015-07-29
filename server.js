@@ -6,6 +6,7 @@ var bodyParser = require('body-parser');
 
 var app = express();
 app.use(bodyParser.json());
+app.use(express.static(__dirname + '/public'));
 
 var mongoURI = 'mongodb://localhost/safetydance';
 //var mongoURI = process.env.MONGO_SAFETYAPP_URI || 'mongodb://localhost/safetydance';

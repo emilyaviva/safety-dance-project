@@ -4,15 +4,9 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var locSchema = new Schema({
-  name: {type: String},
   locationName: {type: String},
-  genderNeutral: {type: Boolean},
-  openToPublic: {type: Boolean},
-  singleStall: {type: Boolean},
-  lockingDoors: {type: Boolean},
-  fullDoors: {type: Boolean},
-  wheelchairStall : {type: Boolean},
-  changingTables: {type: Boolean},
+  geocoordinates: {type: String},
+  cards: [{type: Schema.Types.ObjectId, ref: 'Card'}],
   createdAt: {type: Date},
   updatedAt: {type: Date}
 });

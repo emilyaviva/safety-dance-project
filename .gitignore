@@ -1,1 +1,3 @@
 node_modules
+test/mongo
+test/npm-debug.log

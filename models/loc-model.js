@@ -6,7 +6,7 @@ var Schema = mongoose.Schema;
 var locSchema = new Schema({
   locationName: {type: String},
   geocoordinates: {type: String},
-  cards: [{ type: Schema.Types.ObjectId, ref: 'Card'}],
+  cards: [{type: Schema.Types.ObjectId, ref: 'Card'}],
   createdAt: {type: Date},
   updatedAt: {type: Date}
 });

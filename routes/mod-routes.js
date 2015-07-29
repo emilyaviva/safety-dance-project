@@ -9,6 +9,7 @@ var router = express.Router;
 
 module.exports = function(router) {
   router.use(bodyParser.json());
+  router.use(require('../middlewares/verify'));
 
   // GET all cards
   router.get('/cards', function(req, res) {

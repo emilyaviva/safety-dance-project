@@ -8,7 +8,7 @@ var cardSchema = new Schema({
   _location: {type: Schema.Types.ObjectId, ref: 'Loc'},
   //locationName: {type: String},
   notes: {type: String},
-  createdAt: {type: Date},
+  createdAt: {type: Date}
 });
 
 module.exports = mongoose.model('Card', cardSchema);

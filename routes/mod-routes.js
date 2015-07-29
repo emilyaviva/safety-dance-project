@@ -23,14 +23,14 @@ module.exports = function(router) {
   // GET all unapproved cards
   router.get('/cards', function(req, res) {
     Card.find({approved: false}, function(err, cards) {
-      if (err || !data) res.json({msg: 'no unapproved cards'});
+      if (err || !cards) res.json({msg: 'no unapproved cards'});
       else res.json(cards);
     });
   });
 
   // PUT a card's approved to true, i.e. approve it
   router.put('/cards/:id', function(req, res) {
-    Cards.findOneAndUpdate({_id: req.params.id}, {approved: true}, function(err, card) {
+    Card.findOneAndUpdate({_id: req.params.id}, {approved: true}, function(err, card) {
       if (err || !card) res.status(404).json({msg: 'card not found'});
       else res.json({msg: 'card approved'});
     });
@@ -44,4 +44,4 @@ module.exports = function(router) {
     });
   });
 
-}
+};

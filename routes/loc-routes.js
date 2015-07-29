@@ -19,11 +19,11 @@ module.exports = function(router) {
           else res.json(found);
         });
   });
-  
+
   // GET one location by ID
   router.get('/locs/:id', function(req, res) {
     Loc.findById(req.params.id, function(err, found) {
-      if (err || !data) res.status(500).json({error: err});
+      if (err || !found) res.status(500).json({error: err});
       else res.json(found);
     });
   });
@@ -47,7 +47,7 @@ module.exports = function(router) {
     });
     newLoc.save(function(err, data) {
       if (err || !data) res.status(500).json({error: err});
-      else res.json({msg: 'location created'})
+      else res.json({msg: 'location created'});
     });
   });
 

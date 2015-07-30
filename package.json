@@ -53,7 +53,8 @@
     "node-sass": "^3.2.0",
     "passport": "^0.2.2",
     "passport-local-mongoose": "^1.0.1",
-    "sass": "^0.5.0"
+    "sass": "^0.5.0",
+    "superagent-cli": "^2.0.0"
   },
   "devDependencies": {
     "chai": "^3.2.0",

@@ -3,7 +3,7 @@
 module.exports = function(app) {
   app.controller('locationsController', ['$scope', 'resource', function($scope, resource) {
 
-    var Location = resource('locations');
+    var Loc = resource('locs');
 
     // var getAll = function(){
     //   Bird.get('/birds').success(function(response){
@@ -14,17 +14,17 @@ module.exports = function(app) {
     // getAll();
     $scope.getAll = function(){
       console.log("getting locations?");
-			Location.getAll(function(response){
+			Loc.getAll(function(response){
 				console.log(response);
-				$scope.locations = response;
+				$scope.locs = response;
 			});
 		};
 
-    $scope.getOneLocation = function(){
+    $scope.getOneLoc = function(id, oneLocation){
       console.log("getting locations?");
-			Location.getAll(function(response){
+			Loc.getOne(id, oneLocation, function(response){
 				console.log(response);
-				$scope.locations = response;
+				$scope.locs = response;
 			});
 		};
 
@@ -37,7 +37,7 @@ module.exports = function(app) {
     // };
     $scope.submitForm = function(oneLocation) {
 			console.log('submitted ' + oneLocation);
-			Location.submitForm(oneBirdy, function(response) {
+			Loc.submitForm(oneLocation, function(response) {
 				$scope.getAll();
 			});
 		};
@@ -54,7 +54,7 @@ module.exports = function(app) {
 
     $scope.destroy = function(id) {
 			console.log(id);
-			Location.destroy(id, function(response) {
+			Loc.destroy(id, function(response) {
 				$scope.getAll();
 			});
 		};
@@ -80,7 +80,7 @@ module.exports = function(app) {
     // };
     $scope.update = function(id, oneLocation) {
 			console.log("updating " + id);
-			Location.update(id, oneLocation, function(response) {
+			Loc.update(id, oneLocation, function(response) {
 				oneLocation.editing = false;
 				$scope.getAll();
 			});

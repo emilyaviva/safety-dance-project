@@ -16,6 +16,8 @@ require('./directives/navigation-directive.js')(safetyApp);
 
 //controllers
 require('./controllers/locationsController.js')(safetyApp);
+require('./controllers/cardsController.js')(safetyApp);
+require('./controllers/usersController.js')(safetyApp);
 
 //routes
 safetyApp.config(['$routeProvider', function($routeProvider) {

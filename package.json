@@ -9,7 +9,8 @@
   },
   "scripts": {
     "test": "gulp test",
-    "start": "node server.js"
+    "start": "node server.js",
+    "postinstall": "gulp build"
   },
   "repository": {
     "type": "git",
@@ -50,6 +51,7 @@
     "body-parser": "^1.13.2",
     "express": "^4.13.1",
     "jade": "^1.11.0",
+    "jsonwebtoken": "^5.0.4",
     "mongoose": "^4.1.0",
     "node-sass": "^3.2.0",
     "passport": "^0.2.2",
@@ -71,7 +73,6 @@
     "gulp-webpack": "^1.5.0",
     "jshint": "^2.8.0",
     "jshint-stylish": "^2.0.1",
-    "jsonwebtoken": "^5.0.4",
     "mocha": "^2.2.5",
     "mocha-jshint": "^2.2.3",
     "node-libs-browser": "^0.5.2",

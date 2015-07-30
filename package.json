@@ -46,15 +46,16 @@
   "dependencies": {
     "angular": "^1.4.3",
     "angular-route": "^1.4.3",
+    "bcrypt": "^0.8.4",
     "body-parser": "^1.13.2",
     "express": "^4.13.1",
     "jade": "^1.11.0",
     "mongoose": "^4.1.0",
     "node-sass": "^3.2.0",
     "passport": "^0.2.2",
-    "passport-local-mongoose": "^1.0.1",
+    "passport-local": "^1.0.0",
     "sass": "^0.5.0",
-    "superagent-cli": "^2.0.0"
+    "superagent": "^1.2.0"
   },
   "devDependencies": {
     "chai": "^3.2.0",

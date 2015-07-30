@@ -1,24 +1,8 @@
-<section class="form__base" data-ng-controller="locationsController" data-ng-init="GetLocations()">
+<section class="form__base" data-ng-controller="locationsController" data-ng-init="getAll()">
   <ul>
-    <!-- <li class="form__list-item" ng-repeat="item in list | orderBy:'-distance'">
-    h3>{{item.name}}</h3>
-    <button data-ng-click="show(item)"></button>
-    </li> -->
-    <li class="form__list-item">
-      <h3>Location 1</h3>
-      <button data-ng-click="show(item)"></button>
-    </li>
-    <li class="form__list-item">
-      <h3>Location 2</h3>
-      <button data-ng-click="show(item)"></button>
-    </li>
-    <li class="form__list-item">
-      <h3>Location 3</h3>
-      <button data-ng-click="show(item)"></button>
-    </li>
-    <li class="form__list-item">
-      <h3>Location 4</h3>
-      <button data-ng-click="show(item)"></button>
+    <li class="form__list-item" ng-repeat="item in list | orderBy:'locationName'">
+      <h3>{{item.locationName}}</h3>
+      <button class="btn-type-2" data-ng-click="getOneCard(item._id, item)">Show Details</button>
     </li>
   </ul>
 </section>

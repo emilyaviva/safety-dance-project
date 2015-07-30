@@ -17,6 +17,7 @@ require('./directives/location-card-directive.js')(safetyApp);
 require('./directives/contact-directive.js')(safetyApp);
 require('./directives/comment-card-directive.js')(safetyApp);
 require('./directives/comments-for-location-directive.js')(safetyApp);
+require('./directives/login-directive.js')(safetyApp);
 
 // safetyApp.config(['$routeProvider', function($routeProvider) {
 // 	$routeProvider

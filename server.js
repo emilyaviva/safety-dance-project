@@ -8,8 +8,7 @@ var app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
-var mongoURI = 'mongodb://localhost/safetydance';
-//var mongoURI = process.env.MONGO_SAFETYAPP_URI || 'mongodb://localhost/safetydance';
+var mongoURI = process.env.MONGO_SAFETYAPP_URI || 'mongodb://localhost/safetydance';
 
 var authRoutes = express.Router();
 require('./routes/auth-routes')(authRoutes);

@@ -11,9 +11,9 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 var mongoURI = process.env.MONGO_SAFETYAPP_URI || 'mongodb://localhost/safetydance';
 
-var authRoutes = express.Router();
-require('./routes/auth-routes')(authRoutes);
-app.use('/auth', authRoutes);
+// var authRoutes = express.Router();
+// require('./routes/auth-routes')(authRoutes);
+// app.use('/auth', authRoutes);
 
 var locRoutes = express.Router();
 require('./routes/loc-routes')(locRoutes);

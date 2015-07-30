@@ -2,7 +2,7 @@
   <ul>
     <li class="form__list-item" ng-repeat="item in list | orderBy:'locationName'">
       <h3>{{item.locationName}}</h3>
-      <button class="btn-type-2" data-ng-click="getOneCard(item._id, item)">Show Details</button>
+      <button class="btn-type-2" data-ng-click="getOne(item._id, item)">Show Details</button>
     </li>
   </ul>
 </section>

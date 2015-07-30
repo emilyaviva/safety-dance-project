@@ -23,7 +23,8 @@ require('./controllers/usersController.js')(safetyApp);
 safetyApp.config(['$routeProvider', function($routeProvider) {
 	$routeProvider
   .when('/', {
-		templateUrl: './templates/locations-list-template.html'
+		templateUrl: './templates/locations-list-template.html',
+		controller: 'locationsController'
 	})
 	.when('/about', {
 		templateUrl: './templates/about-template.html'

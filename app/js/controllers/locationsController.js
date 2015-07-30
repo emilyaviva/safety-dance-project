@@ -28,6 +28,14 @@ module.exports = function(app) {
 			});
 		};
 
+    $scope.getCardsForLoc = function(id){
+      console.log("getting locations?");
+      Loc.getAll(id, function(response){
+        console.log(response);
+        $scope.locs.cards = response;
+      });
+    };
+
     // $scope.submitForm = function(oneBirdy) {
     //   console.log(oneBirdy);
     //   console.log("Test");

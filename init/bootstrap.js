@@ -3,7 +3,7 @@
 var superagent = require('superagent');
 
 var initial = {name: 'initial', password: 'initial'};
-
+/*
 superagent.post('/admins')
           .send(initial)
           .end(function(err, res) {
@@ -21,3 +21,4 @@ superagent.post('/admins')
                         else res.send('initial admin bootstrapped');
                       });
           });
+*/

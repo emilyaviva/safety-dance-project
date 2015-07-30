@@ -69,6 +69,7 @@
     "gulp-webpack": "^1.5.0",
     "jshint": "^2.8.0",
     "jshint-stylish": "^2.0.1",
+    "jsonwebtoken": "^5.0.4",
     "mocha": "^2.2.5",
     "mocha-jshint": "^2.2.3",
     "node-libs-browser": "^0.5.2",

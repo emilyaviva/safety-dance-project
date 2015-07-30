@@ -16,7 +16,7 @@ module.exports = function(app) {
           .success(callback)
           .error(errorHandler);
         },
-        getOne: function(id, callback) {  //Is this one correct?
+        getOne: function(id, data, callback) {  //Is this one correct?
           $http({
             method: 'GET',
             url: '/' + resourceName + '/' + id,

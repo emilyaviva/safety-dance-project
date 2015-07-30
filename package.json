@@ -9,8 +9,7 @@
   },
   "scripts": {
     "test": "gulp test",
-    "start": "node server.js",
-    "postinstall": "gulp build"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",

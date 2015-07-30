@@ -42,7 +42,7 @@ function success(position) {
 
   // creates the new 'map' variable using the google object
   // then using the 'mapcanvas' ID appending the options
-  var map = new google.maps.Map(document.getElementById("mapcanvas"), myOptions);
+  var map = new google.maps.Map(mapcanvas, myOptions);
 
   // creates new 'marker' variable
   var marker = new google.maps.Marker({

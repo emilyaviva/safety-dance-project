@@ -1,6 +1,6 @@
 'use strict';
 
-var jwt = require('jsonwebtoken')
+var jwt = require('jsonwebtoken');
 
 module.exports = function(req, res, next) {
   var token = req.body.token || req.query.token || req.headers['x-access-token'];
@@ -12,5 +12,6 @@ module.exports = function(req, res, next) {
         next();
       }
     });
+  }
   else res.status(403).send({success: false, msg: 'No token provided.'});
 };

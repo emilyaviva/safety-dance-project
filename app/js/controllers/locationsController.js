@@ -1,17 +1,11 @@
 'use strict';
 
 module.exports = function(app) {
-  app.controller('locationsController', ['$scope', '$location','resource', '$routeParams', function($scope, $location, resource, $routeParams) {
+  app.controller('locationsController', ['$scope', '$http', '$location','resource', '$routeParams', function($scope, $http, $location, resource, $routeParams) {
 
     var Loc = resource('api/locs');
+    var Card = resource('api/loc/id/cards')
     $scope.params = $routeParams;
-    // if ($routeParams.id) {
-    //   console.log("getting location?");
-    //   Loc.getOne(id, function(response){
-    //       console.log(response);
-    //       $scope.loc = response;
-    //   });
-    // };
 
   //  $window.initGoogleMap();
 
@@ -39,11 +33,23 @@ module.exports = function(app) {
 			});
 		};
 
+    $scope.goToPage = function(newPath) {
+      console.log(newPath);
+      $location.path(newPath);
+    };
+
     $scope.getCardsForLoc = function(id){
-      console.log("getting locations?");
-      Loc.getAll(id, function(response){
+      console.log("getting cards?");
+      $http({
+        method: 'GET',
+        url: 'api/locs/' + id + '/cards'
+      })
+      .success(function(response){
         console.log(response);
-        $scope.locs.cards = response;
+        $scope.cards = response;
+      })
+      .error(function(data) {
+        console.log(data);
       });
     };
 

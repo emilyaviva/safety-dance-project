@@ -35,7 +35,7 @@ safetyApp.config(['$routeProvider', function($routeProvider) {
   .when('/login', {
     templateUrl: './templates/login-template.html'
   })
-	.when('/newcomment', {
+	.when('/newcomment/:id', {
 		templateUrl: './templates/comment-card-template.html'
 	})
   .when('/locs/:id', {

@@ -61,11 +61,24 @@ module.exports = function(app) {
     //   });
     // };
     $scope.submitForm = function(oneLocation) {
-			console.log('submitted ' + oneLocation);
 			Loc.submitForm(oneLocation, function(response) {
-				$scope.getAll();
+			     console.log('submitted ' + oneLocation);
 			});
 		};
+
+    $scope.AddCardToLoc = function(id, newCardNotes) {
+      $http({
+        method: 'POST',
+        url: 'api/locs/' + id + '/cards',
+        data: {'notes': newCardNotes}
+      })
+      .success(function(response) {
+        console.log(response);
+      })
+      .error(function(data) {
+        console.log(data);
+      });
+    };
 
     // $scope.destroy = function(id) {
     //   console.log(id);

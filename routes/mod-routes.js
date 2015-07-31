@@ -11,7 +11,7 @@ var router = express.Router;
 
 module.exports = function(router) {
   router.use(bodyParser.json());
-  //router.use(require('../middlewares/verify'));
+  router.use(require('../middlewares/verify'));
 
 // CARD MANAGEMENT
 

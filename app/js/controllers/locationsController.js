@@ -1,9 +1,10 @@
 'use strict';
 
 module.exports = function(app) {
-  app.controller('locationsController', ['$scope', 'resource', function($scope, resource) {
+  app.controller('locationsController', ['$scope', '$location','resource', function($scope, $location, resource) {
 
     var Loc = resource('api/locs');
+  //  $window.initGoogleMap();
 
     // var getAll = function(){
     //   Bird.get('/birds').success(function(response){
@@ -23,6 +24,7 @@ module.exports = function(app) {
     $scope.getOneLoc = function(id){
       console.log("getting location?");
 			Loc.getOne(id, function(response){
+        $location.path('/locs/:id');
 				console.log(response);
 				$scope.loc = response;
 			});

@@ -62,10 +62,9 @@ function error(msg) {
   s.className = 'fail';
 }
 
-
 // statement that tests for device functionality
-if (navigator.geolocation) {
-  navigator.geolocation.getCurrentPosition(success, error);
-} else {
-  error('not supported');
-}
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(success, error);
+  } else {
+    error('not supported');
+  }

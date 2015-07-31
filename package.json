@@ -47,6 +47,7 @@
   "dependencies": {
     "angular": "^1.4.3",
     "angular-route": "^1.4.3",
+    "bcrypt": "^0.8.4",
     "body-parser": "^1.13.2",
     "express": "^4.13.1",
     "jade": "^1.11.0",

@@ -1,4 +1,4 @@
-<section class="location-card form__base" data-ng-controller="locationsController">
+<section class="location-card form__base" data-ng-controller="locationsController" data-ng-init="getOneLoc(params.id)">
   <section class="clearfix location-card__details">
     <p>Searching for location: <span id="geostatus">checking...</span></p>
     <article class="location-card__map">
@@ -7,7 +7,7 @@
       <section>
         <h3>Location</h3>
         <ul>
-          <li>{{loc.locationName}}</li>
+          <li><h2>{{loc.locationName}}</h2></li>
           <li>123 bathroom Way</li>
         </ul>
       </section>

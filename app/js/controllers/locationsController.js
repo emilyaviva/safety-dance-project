@@ -1,9 +1,18 @@
 'use strict';
 
 module.exports = function(app) {
-  app.controller('locationsController', ['$scope', '$location','resource', function($scope, $location, resource) {
+  app.controller('locationsController', ['$scope', '$location','resource', '$routeParams', function($scope, $location, resource, $routeParams) {
 
     var Loc = resource('api/locs');
+    $scope.params = $routeParams;
+    // if ($routeParams.id) {
+    //   console.log("getting location?");
+    //   Loc.getOne(id, function(response){
+    //       console.log(response);
+    //       $scope.loc = response;
+    //   });
+    // };
+
   //  $window.initGoogleMap();
 
     // var getAll = function(){
@@ -24,7 +33,7 @@ module.exports = function(app) {
     $scope.getOneLoc = function(id){
       console.log("getting location?");
 			Loc.getOne(id, function(response){
-        $location.path('/locs/:id');
+        $location.path('/locs/' + id);
 				console.log(response);
 				$scope.loc = response;
 			});
@@ -95,5 +104,6 @@ module.exports = function(app) {
 				$scope.getAll();
 			});
 		};
- }]);
+
+  }]);
 };

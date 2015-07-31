@@ -3,7 +3,7 @@
 module.exports = function(app) {
   app.controller('locationsController', ['$scope', 'resource', function($scope, resource) {
 
-    var Loc = resource('/api/locs');
+    var Loc = resource('api/locs');
 
     // var getAll = function(){
     //   Bird.get('/birds').success(function(response){
@@ -20,11 +20,11 @@ module.exports = function(app) {
 			});
 		};
 
-    $scope.getOneLoc = function(id, oneLocation){
-      console.log("getting locations?");
-			Loc.getOne(id, oneLocation, function(response){
+    $scope.getOneLoc = function(id){
+      console.log("getting location?");
+			Loc.getOne(id, function(response){
 				console.log(response);
-				$scope.locs = response;
+				$scope.loc = response;
 			});
 		};
 

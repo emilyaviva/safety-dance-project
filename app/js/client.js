@@ -39,10 +39,10 @@ safetyApp.config(['$routeProvider', function($routeProvider) {
 		templateUrl: './templates/comment-card-template.html',
 		controller: 'cardsController'
 	})
-  // .when('/locationCard', {
-	// 	templateUrl: '/templates/location-card-template.html',
-	// 	controller: 'locationCardController'
-	// })
+  .when('/locs/:id', {
+		templateUrl: '/templates/location-card-template.html',
+		controller: 'locationsController'
+	})
   // .when('/login', {
   //   templateUrl: '/templates/login-template.html',
   //   controller: 'loginController'

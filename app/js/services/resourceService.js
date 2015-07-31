@@ -16,10 +16,10 @@ module.exports = function(app) {
           .success(callback)
           .error(errorHandler);
         },
-        getOne: function(id, data, callback) {  //Is this one correct?
+        getOne: function(id, callback) {
           $http({
             method: 'GET',
-            url: '/' + resourceName + '/' + id,
+            url: '/' + resourceName + '/' + id
           })
           .success(callback)
           .error(errorHandler);

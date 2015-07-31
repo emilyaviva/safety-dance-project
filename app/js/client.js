@@ -23,7 +23,8 @@ require('./controllers/usersController.js')(safetyApp);
 safetyApp.config(['$routeProvider', function($routeProvider) {
 	$routeProvider
   .when('/', {
-		templateUrl: './templates/locations-list-template.html'
+		templateUrl: './templates/locations-list-template.html',
+		controller: 'locationsController'
 	})
 	.when('/about', {
 		templateUrl: './templates/about-template.html'
@@ -34,14 +35,17 @@ safetyApp.config(['$routeProvider', function($routeProvider) {
   .when('/login', {
     templateUrl: './templates/login-template.html'
   })
-	.when('/newcontact', {
-		templateUrl: './templates/comment-card-template.html',
-		controller: 'cardsController'
+	.when('/newcomment/:id', {
+		templateUrl: './templates/comment-card-template.html'
 	})
-  // .when('/locationCard', {
-	// 	templateUrl: '/templates/location-card-template.html',
-	// 	controller: 'locationCardController'
-	// })
+  .when('/locs/:id', {
+		templateUrl: './templates/location-card-template.html',
+		controller: 'locationsController'
+	})
+	.when('/locs/:id/cards', {
+		templateUrl: './templates/comments-for-location-template.html',
+		controller: 'locationsController'
+	})
   // .when('/login', {
   //   templateUrl: '/templates/login-template.html',
   //   controller: 'loginController'

@@ -1,4 +1,4 @@
-<section class="location-card form__base" data-ng-controller="cardsController" data-ng-init="getOneCard(id, card)">
+<section class="location-card form__base" data-ng-controller="locationsController" data-ng-init="getOneLoc(params.id)">
   <section class="clearfix location-card__details">
     <p>Searching for location: <span id="geostatus">checking...</span></p>
     <article class="location-card__map">
@@ -7,7 +7,7 @@
       <section>
         <h3>Location</h3>
         <ul>
-          <li>{{card.locationName}}</li>
+          <li><h2>{{loc.locationName}}</h2></li>
           <li>123 bathroom Way</li>
         </ul>
       </section>
@@ -25,9 +25,10 @@
     </section>
     <section class="clearfix form__base location-card__more-info">
       <p>Information last updated: 02/15/2015</p>
-      <button class="btn-type-2" data-ng-click="getOneCard(id)">View User Notes</button>
+      <button class="btn-type-2" data-ng-click="goToPage('/locs/' + params.id + '/cards')">View User Notes</button>
       <p>Has this information changed? Was your experience different?</p>
-      <button class="btn-type-2" data-ng-click="#newcontact">Submit New Comment Card</button>
+      <!-- <button class="btn-type-2" data-ng-click="#newcomment">Submit New Comment Card</button> -->
+      <a href="#newcomment/{{params.id}}">Submit New Comment Card</a>
     </section>
   </section>
 </section>

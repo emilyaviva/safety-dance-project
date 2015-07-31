@@ -1,9 +1,13 @@
 'use strict';
 
 module.exports = function(app) {
-  app.controller('locationsController', ['$scope', 'resource', function($scope, resource) {
+  app.controller('locationsController', ['$scope', '$http', '$location','resource', '$routeParams', function($scope, $http, $location, resource, $routeParams) {
 
-    var Loc = resource('locs');
+    var Loc = resource('api/locs');
+    var Card = resource('api/loc/id/cards')
+    $scope.params = $routeParams;
+
+  //  $window.initGoogleMap();
 
     // var getAll = function(){
     //   Bird.get('/birds').success(function(response){
@@ -20,13 +24,34 @@ module.exports = function(app) {
 			});
 		};
 
-    $scope.getOneLoc = function(id, oneLocation){
-      console.log("getting locations?");
-			Loc.getOne(id, oneLocation, function(response){
+    $scope.getOneLoc = function(id){
+      console.log("getting location?");
+			Loc.getOne(id, function(response){
+        $location.path('/locs/' + id);
 				console.log(response);
-				$scope.locs = response;
+				$scope.loc = response;
 			});
 		};
+
+    $scope.goToPage = function(newPath) {
+      console.log(newPath);
+      $location.path(newPath);
+    };
+
+    $scope.getCardsForLoc = function(id){
+      console.log("getting cards?");
+      $http({
+        method: 'GET',
+        url: 'api/locs/' + id + '/cards'
+      })
+      .success(function(response){
+        console.log(response);
+        $scope.cards = response;
+      })
+      .error(function(data) {
+        console.log(data);
+      });
+    };
 
     // $scope.submitForm = function(oneBirdy) {
     //   console.log(oneBirdy);
@@ -36,11 +61,24 @@ module.exports = function(app) {
     //   });
     // };
     $scope.submitForm = function(oneLocation) {
-			console.log('submitted ' + oneLocation);
 			Loc.submitForm(oneLocation, function(response) {
-				$scope.getAll();
+			     console.log('submitted ' + oneLocation);
 			});
 		};
+
+    $scope.AddCardToLoc = function(id, newCardNotes) {
+      $http({
+        method: 'POST',
+        url: 'api/locs/' + id + '/cards',
+        data: {'notes': newCardNotes}
+      })
+      .success(function(response) {
+        console.log(response);
+      })
+      .error(function(data) {
+        console.log(data);
+      });
+    };
 
     // $scope.destroy = function(id) {
     //   console.log(id);
@@ -85,5 +123,6 @@ module.exports = function(app) {
 				$scope.getAll();
 			});
 		};
- }]);
+
+  }]);
 };

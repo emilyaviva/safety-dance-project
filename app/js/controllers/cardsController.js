@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = function(app) {
-  app.controller('cardsController', ['$scope', 'resource', function($scope, resource) {
+  app.controller('cardsController', ['$scope', 'resource', '$location', function($scope, resource) {
 
     var Card = resource('cards');
 
